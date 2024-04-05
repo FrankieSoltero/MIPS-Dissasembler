@@ -1,0 +1,25 @@
+======================================================================================
+A Program that calculates the first 10 terms the Fibonacci sequence, and stores it in 
+an array like structure. For those that do not know, the Fibonacci sequence is the 
+sequence of numbers {1, 1, 2, 3, 5, 8, 13, etc} 
+such that an+2 = an+1 + an. The "classic" Fibonacci sequence, if there can be said to 
+be such a thing, is the sequence where a0 = 1 and a1 = 1
+======================================================================================
+#include <stdio.h>
+
+int result[10];
+
+int main() {
+  int n = 2;
+  result[0] = 1;
+  result[1] = 1;
+  do {
+    result[n] = result[n-1] + result[n-2];
+    n++;
+  } while (n < 10);
+
+  return 0;
+}
+
+======================================================================================
+

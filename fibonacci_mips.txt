@@ -1,0 +1,27 @@
+.text 496
+.global _main
+
+
+_main:
+	ADDI R8 , R0 , #44
+	ADDI R6 , R0 , #1
+	SW   R6 , result(R0)
+	ADDI R7 , R0 , #4
+	SW   R6 , result(R7)
+	ADDI R10, R0 , #8
+_loop:	
+	ADDI R3 , R10, #-8
+	LW   R1 , result(R3)
+	ADDI R4 , R10, #-4
+	LW   R2 , result(R4)
+	ADD  R5 , R1 , R2
+	SW   R5 , result(R10)
+	ADDI R10, R10, #4
+	BEQ  R10, R8 , _exit
+	J _loop
+_exit:
+	NOP
+	BREAK
+
+result:
+	.word 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
