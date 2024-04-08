@@ -166,12 +166,12 @@ public class project {
                                     boolean isNegative = signValue < 0;
                                     //Here we format it for if its negative
                                     if (isNegative == true){
-                                        writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + mipsFunct + " " + rs + ", " + rt + ", #" + signValue);
+                                        writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + mipsFunct + " " + rt + ", " + rs + ", #" + signValue);
                                         writer.newLine();
                                     }
                                     //Here we format it if its positve
                                     else {
-                                        writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + mipsFunct + " " + rs + ", " + rt + ", #" + immediateValue);
+                                        writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + mipsFunct + " " + rt + ", " + rs + ", #" + signValue);
                                         writer.newLine();
                                     }   
                                 }
@@ -197,7 +197,8 @@ public class project {
                                     String offsetStr = line.substring(16, 32);
                                     rs = getRegisterName(rs);
                                     rt = getRegisterName(rt);
-                                    int offset = Integer.parseInt(offsetStr);
+                                    int offset = Integer.parseInt(offsetStr, 2);
+                                    offset = offset << 2;
                                     writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + mipsFunct + " " + rs + ", " + rt + ", #" + offset);
                                     writer.newLine();
                                 }
