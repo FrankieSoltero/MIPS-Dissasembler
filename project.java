@@ -232,7 +232,7 @@ public class project {
                             rs = line.substring(6, 11);
                             String offsetStr = line.substring(16, 32);
                             rs = getRegisterName(rs);
-                            int offset = Integer.parseInt(offsetStr);
+                            int offset = Integer.parseInt(offsetStr,2);
                             writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + mipsFunct + " " + rs + ", #" + offset);
                             writer.newLine();
                         }
