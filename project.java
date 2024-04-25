@@ -106,7 +106,9 @@ public class project {
                 }
                 //If break found is true we print the address and the number 0 next to it
                 if (breakFound == true){
-                    writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + "0");
+                    long result1 = Long.parseLong(line, 2);
+                    int result = (int) result1;
+                    writer.write(first + " " + second + " " + third + " " + fourth + " " + fifth + " " + sixth + "   " + address + " " + result);
                     writer.newLine();
                 }
                 else {
